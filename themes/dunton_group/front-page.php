@@ -4,7 +4,8 @@
   while (have_posts()) : the_post();
 
   ?>
-    <!-- Default Page-->
+
+    <!-- Custom front page template to use only needed stuff -->
 
     <!-- Page content -->
       <section class="default-section">

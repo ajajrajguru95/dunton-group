@@ -1,7 +1,12 @@
 
 @use "./mixins/" as mix; //Dart sass namespaced import
 
-// Header styles - Cosmetics
+/*
+======================================
+Header styles - Cosmetics
+======================================
+*/
+
 header{
     // Primary header styles
     &.site-header.site-header{
@@ -94,7 +99,11 @@ header{
     }
 }
 
-// Header responsive styles - Tablet
+/*
+======================================
+Header responsive styles - Tablet
+======================================
+*/
 header{
     &.site-header{ //higher specificity
         .header-inner{
