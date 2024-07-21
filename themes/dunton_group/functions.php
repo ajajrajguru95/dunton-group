@@ -9,10 +9,10 @@
  * Enqueue the child theme styles.
  */
 
-function my_theme_child_enqueue_styles() {
+function dunton_child() {
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('hello-elementor'));
 }
-add_action('wp_enqueue_scripts', 'my_theme_child_enqueue_styles');
+add_action('wp_enqueue_scripts', 'dunton_child');
 
 
 /*
