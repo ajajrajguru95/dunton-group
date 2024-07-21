@@ -1,0 +1,34 @@
+// All the form styles are editable via Formidable styles panel but for custom or unique styles use this file to overwrite.
+// Use default form css variables for resuability
+
+// Targetting default forms for global styling
+.frm_forms{
+    .frm_form_title,.frm_submit{
+        text-align: center;
+    }
+    .frm_submit{
+        margin-top: 1.5rem;
+    }
+    // If label type is floating
+    .frm_inside_container{
+        &.frm_label_float_top > label{
+            background-color: #266b5c;
+            width: auto;
+            --label-color: #fff;
+            top: calc(1px + .3 * var(--field-height));
+            left: 8px;
+            padding-inline: 3px;
+        }
+    }
+    //Form field gap
+    .frm_form_fields{
+        .frm_fields_container{
+            column-gap: 8%;
+        }
+    }
+    select{
+        option{
+            --text-color: #000;
+        }
+    }
+}

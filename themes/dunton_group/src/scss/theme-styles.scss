@@ -1,0 +1,9 @@
+@forward "header";
+
+@forward "banner";
+
+@forward "form";
+
+body{
+    font-family: var(--e-global-typography-primary-font-family);
+}

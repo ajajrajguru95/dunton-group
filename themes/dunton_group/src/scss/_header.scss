@@ -1,0 +1,109 @@
+
+@use "./mixins/" as mix; //Dart sass namespaced import
+
+// Header styles - Cosmetics
+header{
+    // Primary header styles
+    &.site-header.site-header{
+        position: absolute;//Not set fixed because to overlap on banner given we are building only banner component
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        .header-inner{
+            flex-wrap: nowrap;
+        }
+        .site-branding{
+            flex: 1;
+        }
+        .site-navigation-toggle{
+            background-color: transparent;       
+            color: #fff;
+        }
+        .site-navigation{
+            align-items: flex-start;
+            li{
+                align-items: center;
+                color: var(--e-global-color-text);
+                a{
+                    &:after{
+                        content: '';
+                        display: block;
+                        height: 2px;
+                        background-color: var(--e-global-color-text);
+                        width: 100%;
+                        transition: scale 0.35s ease;
+                        transform-origin: left;
+                        scale: 0 1;
+                    }
+                    @include mix.hover{
+                        &:after{
+                            scale: 1 1;
+                        }
+                    }
+                }
+                &.current-menu-item{
+                    font-weight: bold;
+                    a{
+                        &:after{
+                            scale: 1 1;
+                        }
+                    }
+                }
+                &.custom-header-item{
+                    font-weight: bold;
+                    &:before{
+                        content: ' | ';
+                        display: inline-block;
+                        padding-right: 15px;
+                        font-weight: 400;
+                    }
+                    a{
+                        display: inline-flex;
+                        color: var(--e-global-color-0bce0e1);
+                        padding-inline-start: 5px;
+                    }
+                }
+            }
+            // Mobile Menu
+            &-dropdown{
+                ul{
+                    li{
+                        &.current-menu-item{
+                            a{
+                                background-color: var(--e-global-color-accent);
+                                color: var(--e-global-color-text);
+                            }
+                        }
+                    }
+                }
+                .custom-header-item{
+                    span{
+                        padding-left: 20px;
+                    }
+                    a{
+                        display: inline-flex;
+                        padding-left: 0;
+                        color: var(--e-global-color-accent);
+                        font-weight: 500;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Header responsive styles - Tablet
+header{
+    &.site-header{ //higher specificity
+        .header-inner{
+            @include mix.breakpoint(992){
+                padding-inline: 20px;
+            }
+            @include mix.breakpoint(1199){
+                max-width: min(100%,var(--container-max-width,1140px));
+            }
+        }
+    }
+}
